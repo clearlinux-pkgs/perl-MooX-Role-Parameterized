@@ -1,0 +1,12 @@
+0.082
+perl(Class::Method::Modifiers)
+perl(Devel::GlobalDestruction)
+perl(Exporter::Tiny)
+perl(List::MoreUtils)
+perl(Module::Runtime)
+perl(Moo)
+perl(Role::Tiny)
+perl(Sub::Exporter::Progressive)
+perl(Sub::Quote)
+perl(Sub::Uplevel)
+perl(Test::Exception)
