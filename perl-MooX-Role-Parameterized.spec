@@ -74,9 +74,9 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.1/MooX/Role/Parameterized.pm
-/usr/lib/perl5/vendor_perl/5.28.1/MooX/Role/Parameterized/Proxy.pm
-/usr/lib/perl5/vendor_perl/5.28.1/MooX/Role/Parameterized/With.pm
+/usr/lib/perl5/vendor_perl/5.28.2/MooX/Role/Parameterized.pm
+/usr/lib/perl5/vendor_perl/5.28.2/MooX/Role/Parameterized/Proxy.pm
+/usr/lib/perl5/vendor_perl/5.28.2/MooX/Role/Parameterized/With.pm
 
 %files dev
 %defattr(-,root,root,-)
