@@ -4,13 +4,14 @@
 #
 Name     : perl-MooX-Role-Parameterized
 Version  : 0.082
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/P/PA/PACMAN/MooX-Role-Parameterized-0.082.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/P/PA/PACMAN/MooX-Role-Parameterized-0.082.tar.gz
 Summary  : 'MooX::Role::Parameterized - roles with composition parameters'
 Group    : Development/Tools
 License  : MIT
 Requires: perl-MooX-Role-Parameterized-license = %{version}-%{release}
+Requires: perl-MooX-Role-Parameterized-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Class::Method::Modifiers)
 BuildRequires : perl(Devel::GlobalDestruction)
@@ -47,14 +48,24 @@ Group: Default
 license components for the perl-MooX-Role-Parameterized package.
 
 
+%package perl
+Summary: perl components for the perl-MooX-Role-Parameterized package.
+Group: Default
+Requires: perl-MooX-Role-Parameterized = %{version}-%{release}
+
+%description perl
+perl components for the perl-MooX-Role-Parameterized package.
+
+
 %prep
 %setup -q -n MooX-Role-Parameterized-0.082
+cd %{_builddir}/MooX-Role-Parameterized-0.082
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -64,7 +75,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -73,7 +84,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-MooX-Role-Parameterized
-cp LICENSE %{buildroot}/usr/share/package-licenses/perl-MooX-Role-Parameterized/LICENSE
+cp %{_builddir}/MooX-Role-Parameterized-0.082/LICENSE %{buildroot}/usr/share/package-licenses/perl-MooX-Role-Parameterized/80f2bd287ec01b4bd44170a77b73eb180c53341d
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -86,9 +97,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/MooX/Role/Parameterized.pm
-/usr/lib/perl5/vendor_perl/5.28.2/MooX/Role/Parameterized/Proxy.pm
-/usr/lib/perl5/vendor_perl/5.28.2/MooX/Role/Parameterized/With.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -98,4 +106,10 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-MooX-Role-Parameterized/LICENSE
+/usr/share/package-licenses/perl-MooX-Role-Parameterized/80f2bd287ec01b4bd44170a77b73eb180c53341d
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/MooX/Role/Parameterized.pm
+/usr/lib/perl5/vendor_perl/5.30.1/MooX/Role/Parameterized/Proxy.pm
+/usr/lib/perl5/vendor_perl/5.30.1/MooX/Role/Parameterized/With.pm
