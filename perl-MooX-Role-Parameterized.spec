@@ -4,7 +4,7 @@
 #
 Name     : perl-MooX-Role-Parameterized
 Version  : 0.082
-Release  : 4
+Release  : 5
 URL      : https://cpan.metacpan.org/authors/id/P/PA/PACMAN/MooX-Role-Parameterized-0.082.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/P/PA/PACMAN/MooX-Role-Parameterized-0.082.tar.gz
 Summary  : 'MooX::Role::Parameterized - roles with composition parameters'
@@ -110,6 +110,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.2/MooX/Role/Parameterized.pm
-/usr/lib/perl5/vendor_perl/5.30.2/MooX/Role/Parameterized/Proxy.pm
-/usr/lib/perl5/vendor_perl/5.30.2/MooX/Role/Parameterized/With.pm
+/usr/lib/perl5/vendor_perl/5.30.3/MooX/Role/Parameterized.pm
+/usr/lib/perl5/vendor_perl/5.30.3/MooX/Role/Parameterized/Proxy.pm
+/usr/lib/perl5/vendor_perl/5.30.3/MooX/Role/Parameterized/With.pm
