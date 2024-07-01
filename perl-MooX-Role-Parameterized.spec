@@ -7,7 +7,7 @@
 #
 Name     : perl-MooX-Role-Parameterized
 Version  : 0.501
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/P/PA/PACMAN/MooX-Role-Parameterized-0.501.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/P/PA/PACMAN/MooX-Role-Parameterized-0.501.tar.gz
 Summary  : 'roles with composition parameters'
